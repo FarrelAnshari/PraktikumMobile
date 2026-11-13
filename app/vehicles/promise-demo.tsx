@@ -119,7 +119,7 @@ export default function PromiseDemoScreen() {
                 <View style={{ flex: 1 }}>
                   <Text style={[globalStyles.title, { fontSize: 13 }]}>{item.title}</Text>
                   <Text style={globalStyles.subtitle}>
-                    Brand: {item.brand || '-'} | Harga: ${item.price} | Stok: {item.stock}
+                    Brand: {item.brand || '-'} | Stok: {item.stock} unit | Status: {item.availabilityStatus || 'Tersedia'}
                   </Text>
                 </View>
               </View>

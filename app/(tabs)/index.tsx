@@ -287,7 +287,7 @@ export default function HomeScreen() {
         data={daftarHasil}
         keyExtractor={(item: ParkingArea) => item.id}
         renderItem={renderItem}
-        ListHeaderComponent={renderHeader}
+        ListHeaderComponent={renderHeader()}
         contentContainerStyle={{ paddingBottom: 30 }}
         showsVerticalScrollIndicator={false}
       />

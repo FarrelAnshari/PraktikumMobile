@@ -289,7 +289,7 @@ export default function HomeScreen({
         data={filteredAreas}
         keyExtractor={(item) => item.id.toString()}
         renderItem={renderAreaItem}
-        ListHeaderComponent={renderHeader}
+        ListHeaderComponent={renderHeader()}
         contentContainerStyle={styles.listContent}
         showsVerticalScrollIndicator={false}
         refreshControl={

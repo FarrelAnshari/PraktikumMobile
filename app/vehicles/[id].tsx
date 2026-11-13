@@ -106,13 +106,15 @@ export default function VehicleDetailScreen() {
             Brand: <Text style={{ fontWeight: '700', color: '#0F172A' }}>{vehicle.brand || '-'}</Text> | SKU: {vehicle.sku}
           </Text>
 
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginVertical: 12 }}>
-            <Text style={{ fontSize: 22, fontWeight: '900', color: '#2563EB' }}>
-              ${vehicle.price.toLocaleString()}
-            </Text>
-            <View style={{ backgroundColor: '#FEF3C7', paddingHorizontal: 10, paddingVertical: 4, borderRadius: 8, borderWidth: 1, borderColor: '#FDE68A' }}>
-              <Text style={{ color: '#D97706', fontWeight: '800', fontSize: 12 }}>
-                Rating: {vehicle.rating} / 5.0
+          <View style={{ flexDirection: 'row', alignItems: 'center', marginVertical: 10, gap: 8 }}>
+            <View style={{ backgroundColor: '#EFF6FF', paddingHorizontal: 10, paddingVertical: 4, borderRadius: 8, borderWidth: 1, borderColor: '#BFDBFE' }}>
+              <Text style={{ color: '#1D4ED8', fontWeight: '800', fontSize: 12 }}>
+                Status: {vehicle.availabilityStatus || 'Aktif'}
+              </Text>
+            </View>
+            <View style={{ backgroundColor: '#F1F5F9', paddingHorizontal: 10, paddingVertical: 4, borderRadius: 8, borderWidth: 1, borderColor: '#E2E8F0' }}>
+              <Text style={{ color: '#475569', fontWeight: '700', fontSize: 12 }}>
+                Stok Unit: {vehicle.stock}
               </Text>
             </View>
           </View>

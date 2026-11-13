@@ -4,7 +4,6 @@ import { delay } from '../utils/delay';
 const BASE_URL = 'https://dummyjson.com/products';
 
 export async function getVehicles(): Promise<VehicleItem[]> {
-
   await delay(600);
 
   const response = await fetch(`${BASE_URL}/category/vehicle`);
@@ -15,6 +14,23 @@ export async function getVehicles(): Promise<VehicleItem[]> {
 
   const json: ApiResponse<VehicleItem[]> = await response.json();
   return json.products;
+}
+
+export async function searchVehicles(keyword: string): Promise<VehicleItem[]> {
+  await delay(300);
+
+  const all = await getVehicles();
+  if (!keyword.trim()) {
+    return all;
+  }
+
+  const lower = keyword.toLowerCase();
+  return all.filter(
+    (item) =>
+      item.title.toLowerCase().includes(lower) ||
+      (item.brand && item.brand.toLowerCase().includes(lower)) ||
+      (item.category && item.category.toLowerCase().includes(lower))
+  );
 }
 
 export async function getVehicleById(id: string | number): Promise<VehicleItem> {
